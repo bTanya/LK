@@ -1,7 +1,6 @@
 import random
 import time
 
-
 class Unit(object):
     __health = 100
     __recharge = None
@@ -80,7 +79,6 @@ class Vehicles(Unit):
         list_operators = [i.get_health for i in self.operators]
         self.set_health(sum(list_operators) / len(list_operators))
 
-    @staticmethod
     def alive(units):
         for i in units:
             if i.get_health > 0:
@@ -112,9 +110,4 @@ class Vehicles(Unit):
             else:
                 self.operators[current_operator].take_damage(damage * 0.1)
                 current_operator += 1
-
-
-
-
-
 
